@@ -1,0 +1,75 @@
+/* === Global reset and root styles for full viewport === */
+@import "tailwindcss";
+
+
+
+/* Ide.css */
+
+/* Main IDE container - full viewport */
+.ide-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Toolbar - fixed height */
+.ide-toolbar {
+  flex-shrink: 0;
+}
+
+/* Sandpack wrapper - takes remaining space */
+.sandpack-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Override Sandpack's default styles */
+.sandpack-wrapper .sp-wrapper,
+.sandpack-wrapper .sp-layout {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Custom layout for the three columns */
+.custom-sandpack-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-sandpack-layout .file-explorer {
+  width: 250px;
+  height: 100%;
+  overflow: auto;
+  border-right: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.custom-sandpack-layout .editor-preview-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.custom-sandpack-layout .code-editor {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-sandpack-layout .code-preview {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ensure Sandpack components fill their containers */
+.custom-sandpack-layout .sp-stack,
+.custom-sandpack-layout .sp-code-editor,
+.custom-sandpack-layout .sp-preview-container {
+  height: 100% !important;
+}
