@@ -18,10 +18,15 @@ const app = express();
 
 // --- Middleware ---
 
+
 app.use(cors({
-  origin: 'http://localhost:5173', // <-- Allow your frontend's origin
-  credentials: true, // <-- This allows cookies to be sent and received
+  origin: [
+    "http://localhost:5173",
+    "https://react-playground-cipher-schools-ykn.vercel.app"
+  ],
+  credentials: true, // Allow cookies, auth headers, etc.
 }));
+
 // Enable CORS (Cross-Origin Resource Sharing)
 // This is crucial for your frontend (on a different domain) to talk to your backend
 
